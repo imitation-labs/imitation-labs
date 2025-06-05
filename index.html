@@ -9,12 +9,53 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Imitation Labs</h1>
-        <p>This is a beautiful static site, ready to be served with GitHub Pages.<br>
-        Customize this page to showcase your project, portfolio, or anything you like!</p>
-        <a class="github" href="https://github.com/" target="_blank">Visit GitHub</a>
-    </div>
+    <div class="hero-bg"></div>
+    <nav class="navbar">
+        <div class="logo">Imitation Labs</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>Welcome to <span class="gradient-text">Imitation Labs</span></h1>
+        <p class="subtitle">A beautiful, modern static site ready for GitHub Pages.<br>Showcase your project, portfolio, or anything you like!</p>
+        <a class="cta-btn" href="https://github.com/" target="_blank">Visit GitHub</a>
+    </header>
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Imitation Labs is dedicated to building elegant, high-performance web experiences. Our static site template is modular, extensible, and perfect for personal or professional use.</p>
+    </section>
+    <section id="features" class="section features">
+        <h2>Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Fast & Lightweight</h3>
+                <p>Optimized for speed and minimal load times.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎨</span>
+                <h3>Modern Design</h3>
+                <p>Beautiful gradients, smooth animations, and responsive layout.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔒</span>
+                <h3>Ready for Security</h3>
+                <p>Easy to integrate with authentication and backend APIs.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
     <footer>
         &copy; 2025 Imitation Labs. Powered by GitHub Pages.
     </footer>

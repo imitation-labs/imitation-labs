@@ -1,47 +1,189 @@
 /* style.css - Modular styles for Imitation Labs */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     margin: 0;
     min-height: 100vh;
+    background: #f6d365;
+    position: relative;
+    overflow-x: hidden;
+}
+.hero-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    animation: gradientMove 10s ease-in-out infinite alternate;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff7e5f;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+.nav-links li a:hover {
+    color: #ff7e5f;
+}
+.hero {
+    text-align: center;
+    padding: 120px 24px 60px 24px;
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #222;
+}
+.gradient-text {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.subtitle {
+    color: #444;
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+}
+.cta-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    border-radius: 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 24px 0 rgba(255,126,95,0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+.cta-btn:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    transform: translateY(-2px) scale(1.04);
+}
+.section {
+    max-width: 900px;
+    margin: 48px auto;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+    padding: 48px 32px;
+    z-index: 1;
+    position: relative;
+}
+.section h2 {
+    color: #ff7e5f;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+.features {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.feature-cards {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
     justify-content: center;
+    margin-top: 24px;
 }
-.container {
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-    padding: 40px 32px;
-    max-width: 500px;
+.feature-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.07);
+    padding: 32px 24px;
+    width: 220px;
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-h1 {
-    color: #ff7e5f;
-    margin-bottom: 16px;
+.feature-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(255,126,95,0.13);
 }
-p {
-    color: #333;
-    font-size: 1.2em;
-    margin-bottom: 24px;
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
 }
-a.github {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 24px;
-    background: #ff7e5f;
-    color: #fff;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+    padding: 12px 16px;
     border-radius: 8px;
-    text-decoration: none;
+    border: 1px solid #eee;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+}
+.contact-form button {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
     transition: background 0.2s;
 }
-a.github:hover {
-    background: #feb47b;
+.contact-form button:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
 }
 footer {
-    margin-top: 40px;
+    margin-top: 60px;
     color: #fff;
-    font-size: 0.95em;
+    font-size: 1.05em;
+    text-align: center;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    padding: 24px 0 16px 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -2px 16px 0 rgba(31, 38, 135, 0.07);
+    position: relative;
+    z-index: 1;
+}
+@media (max-width: 700px) {
+    .navbar { flex-direction: column; padding: 16px 8px; }
+    .logo { font-size: 1.3rem; }
+    .nav-links { gap: 16px; }
+    .hero { padding: 60px 8px 30px 8px; }
+    .section { padding: 24px 8px; }
+    .feature-cards { flex-direction: column; gap: 18px; }
+    .feature-card { width: 100%; }
 }
