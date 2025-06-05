@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     min-height: 100vh;
-    background: #f6d365;
+    background: #e3e9f0;
     position: relative;
     overflow-x: hidden;
 }
@@ -11,12 +11,7 @@ body {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 0;
-    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    animation: gradientMove 10s ease-in-out infinite alternate;
-}
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    background: linear-gradient(120deg, #e3e9f0 0%, #f8fafc 100%);
 }
 .navbar {
     width: 100%;
@@ -24,17 +19,21 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 48px;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.55);
     box-shadow: 0 2px 16px 0 rgba(31, 38, 135, 0.07);
     position: sticky;
     top: 0;
     z-index: 2;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.18);
 }
 .logo {
     font-size: 2rem;
     font-weight: bold;
-    color: #ff7e5f;
+    color: #2e3a59;
     letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.2);
 }
 .nav-links {
     list-style: none;
@@ -45,13 +44,18 @@ body {
 }
 .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: #2e3a59;
     font-weight: 500;
     font-size: 1.1rem;
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
 }
 .nav-links li a:hover {
-    color: #ff7e5f;
+    color: #1a73e8;
+    background: rgba(26,115,232,0.08);
 }
 .hero {
     text-align: center;
@@ -63,46 +67,54 @@ body {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #222;
+    color: #2e3a59;
+    text-shadow: 0 2px 12px rgba(255,255,255,0.2);
 }
 .gradient-text {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    background: linear-gradient(90deg, #1a73e8, #43e8d8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 .subtitle {
-    color: #444;
+    color: #3b4a6b;
     font-size: 1.3rem;
     margin-bottom: 32px;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.15);
 }
 .cta-btn {
     display: inline-block;
     padding: 14px 36px;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    color: #fff;
+    background: rgba(255,255,255,0.35);
+    color: #1a73e8;
     border-radius: 32px;
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 4px 24px 0 rgba(255,126,95,0.15);
-    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 24px 0 rgba(30,64,175,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    border: 1px solid rgba(26,115,232,0.13);
+    backdrop-filter: blur(8px);
 }
 .cta-btn:hover {
-    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    background: #1a73e8;
+    color: #fff;
     transform: translateY(-2px) scale(1.04);
 }
 footer {
     margin-top: 60px;
-    color: #fff;
+    color: #2e3a59;
     font-size: 1.05em;
     text-align: center;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    background: rgba(255,255,255,0.55);
     padding: 24px 0 16px 0;
     border-radius: 18px 18px 0 0;
     box-shadow: 0 -2px 16px 0 rgba(31, 38, 135, 0.07);
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-top: 1px solid rgba(200, 200, 200, 0.18);
 }
 @media (max-width: 700px) {
     .navbar { flex-direction: column; padding: 16px 8px; }
