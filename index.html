@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imitation Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="hero-bg"></div>
     <nav class="navbar">
-        <div class="logo">Imitation Labs</div>
+        <div class="logo glass-logo">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                <defs>
+                    <linearGradient id="glassGradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#e3e9f0"/>
+                        <stop offset="1" stop-color="#43e8d8"/>
+                    </linearGradient>
+                    <filter id="glassBlur" x="-10" y="-10" width="68" height="68" filterUnits="userSpaceOnUse">
+                        <feGaussianBlur stdDeviation="4"/>
+                    </filter>
+                </defs>
+                <circle cx="24" cy="24" r="20" fill="url(#glassGradient)" fill-opacity="0.7" filter="url(#glassBlur)"/>
+                <circle cx="24" cy="24" r="16" fill="#fff" fill-opacity="0.25"/>
+                <text x="24" y="30" text-anchor="middle" font-size="18" font-family="Quicksand, Roboto, Arial, sans-serif" fill="#1a73e8" font-weight="bold" style="letter-spacing:2px;">IL</text>
+            </svg>
+            <span class="logo-text">Imitation Labs</span>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="team.html">Team</a></li>
